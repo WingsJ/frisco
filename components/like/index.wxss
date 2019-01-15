@@ -1,0 +1,9 @@
+/* components/like/index.wxss */
+.cont-images{
+  width: 32rpx;
+  height: 28rpx;
+}
+.cont-images image{
+  width: 100%;
+  height: 100%;
+}

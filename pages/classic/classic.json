@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "J-like":"/components/like/index"
+  }
+}

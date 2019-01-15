@@ -1,0 +1,4 @@
+<!--components/like/index.wxml-->
+<view class='cont-images'>
+  <image src="images/like.png"></image>
+</view>

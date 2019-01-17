@@ -1,7 +1,8 @@
 /* components/like/index.wxss */
 .cont-images{
- display: flex;
+ display: inline-flex;
  flex-direction: row;
+ padding: 10rpx;
 }
 .cont-images image{
   width: 32rpx;
@@ -9,5 +10,9 @@
 }
 .cont-images text{
   font-size: 24rpx;
-  color: #aaa;
+  line-height: 24rpx;
+  color: #bbbbbb;
+  position: relative;
+  bottom: 10rpx;
+  left: 6rpx;
 }

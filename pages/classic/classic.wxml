@@ -1,4 +1,4 @@
 <!--pages/classic/classic.wxml-->
 <view class='container'>
-  <J-like />
+  <J-like like= "{{classicData.like_status}}" count="{{classicData.fav_nums}}" />
 </view>

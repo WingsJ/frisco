@@ -7,15 +7,15 @@ Component({
     like: {
       type: Boolean,//数据类型 必填
       value: false, //初始值 选填
-      observer: () => {
-
+      observer: (options) => {
+        console.log(options)
       }
     },
     count: {
       type: Number,
       value: 1,
-      observer: () => {
-
+      observer: (options) => {
+        console.log(options)
       }
     }
   },

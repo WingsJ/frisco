@@ -1,4 +1,6 @@
 // pages/classic/classic.js
+import { HTTP } from '../../utils/http.js';
+const http = new HTTP();
 Page({
 
   /**
@@ -12,10 +14,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: 'http://bl.7yue.pro/v1/classic/latest',
-      header: {
-        appkey: 'AbhC31IG7ruCDp57'
+    http.request({
+      url:'classic/latest',
+      success:(data) =>{
+        console.log(data)
       }
     })
   },

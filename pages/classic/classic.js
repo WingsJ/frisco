@@ -1,11 +1,9 @@
 // pages/classic/classic.js
 import { ClassicModel } from '../../modules/classic.js';
-let Classic = new ClassicModel()
+import { LikeModel } from '../../modules/like.js';
+let classicModel = new ClassicModel();
+let likeModel = new LikeModel();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     classicData:''
   },
@@ -14,60 +12,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    Classic.getLatest((res) =>{
+    classicModel.getLatest((res) =>{
       console.log(res)
       this.setData({
         classicData:res
       })
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onLike(e){
+    likeModel.like(e.detail.behavior, this.data.classicData.id, this.data.classicData.type)
   }
 })

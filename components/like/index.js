@@ -8,14 +8,14 @@ Component({
       type: Boolean,//数据类型 必填
       value: false, //初始值 选填
       observer: (options) => {
-        console.log(options)
+        
       }
     },
     count: {
       type: Number,
       value: 1,
       observer: (options) => {
-        console.log(options)
+        //console.log(options)
       }
     }
   },
@@ -38,6 +38,11 @@ Component({
       this.setData({
         like: !like,
         count: like ? --count : ++count
+      })
+      
+      let behavior = this.properties.like?'like':'unlike';
+      this.triggerEvent('like',{
+        behavior,
       })
     }
   }

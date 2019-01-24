@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "J-like":"/components/like/index",
-    "J-movie": "/components/classic/movie/index"
+    "J-movie": "/components/classic/movie/index",
+    "J-epsoide": "/components/epsoide/index"
   }
 }

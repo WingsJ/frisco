@@ -1,5 +1,6 @@
 <!--pages/classic/classic.wxml-->
 <view class='container'>
+  <J-epsoide index="{{classicData.index}}" />
   <J-like bind:like="onLike" like= "{{classicData.like_status}}" count="{{classicData.fav_nums}}" />
   <J-movie content="{{classicData.content}}" image="{{classicData.image}}" />
 </view>

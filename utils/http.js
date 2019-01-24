@@ -19,7 +19,7 @@ class HTTP {
       success: (res) => {
         let code = res.statusCode + '';
         if (code.startsWith(2)) {
-          params.success(res.data)
+          params.success && params.success(res.data)
         }else{
           console.log(res)
           this._show_error(res.data.error_code)

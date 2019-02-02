@@ -5,7 +5,9 @@ let classicModel = new ClassicModel();
 let likeModel = new LikeModel();
 Page({
   data: {
-    classicData:''
+    classicData:null,
+    first:false,
+    latest:true,
   },
 
   /**
@@ -19,7 +21,15 @@ Page({
       })
     })
   },
+  //J-like
   onLike(e){
     likeModel.like(e.detail.behavior, this.data.classicData.id, this.data.classicData.type)
+  },
+  //J-movie
+  left(e){
+    console.log('left')
+  },
+  right(e){
+    console.log('right')
   }
 })

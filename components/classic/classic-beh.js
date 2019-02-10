@@ -3,6 +3,13 @@ const classicBeh = Behavior({
     image: String,
     content: String
   },
+  data:{
+
+  },
+  methods:{
+
+  },
+  
 })
 
 export {classicBeh}

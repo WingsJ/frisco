@@ -5,7 +5,7 @@
     <J-like class="like" bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
   </view>
   <J-movie hidden="{{type !== 100}}" content="{{content}}" image="{{image}}" />
-  <J-music hidden="{{type !== 200}}" url="{{url}}" title="{{title}}" content="{{content}}" image="{{image}}" />
+  <J-music wx:if="{{type === 200}}" url="{{url}}" title="{{title}}" content="{{content}}" image="{{image}}" />
   <J-essay hidden="{{type !== 300}}" content="{{content}}" image="{{image}}" />
   <J-navi bind:left="left" bind:right="right" class="navi" title="{{title}}" first="{{first}}" latest="{{latest}}" />
 </view>

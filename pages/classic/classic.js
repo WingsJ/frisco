@@ -5,9 +5,10 @@ let classicModel = new ClassicModel();
 let likeModel = new LikeModel();
 Page({
   data: {
-    classicData: null,
     first: false,
     latest: true,
+    likeCount:0,
+    likeStatus:false,
   },
 
   /**
@@ -16,13 +17,15 @@ Page({
   onLoad: function (options) {
     classicModel.getLatest((res) => {
       this.setData({
-        classicData: res
+        ...res,
+        likeCount: res.fav_nums,
+        likeStatus:res.id,
       })
     })
   },
   //J-like
   onLike(e) {
-    likeModel.like(e.detail.behavior, this.data.classicData.id, this.data.classicData.type)
+    likeModel.like(e.detail.behavior, this.data.id, this.data.type)
   },
   //J-movie
   left(e) {
@@ -32,13 +35,22 @@ Page({
     this._updateClassic('previous')
   },
   _updateClassic(nextOrprevious){
-    let index = this.data.classicData.index;
+    let index = this.data.index;
     classicModel.getClassic((res) => {
       this.setData({
-        classicData: res,
+        ...res,
         first: classicModel.isFirst(res.index),
         latest: classicModel.isLatest(res.index),
       })
+      this._getLikeStatus(res.id,res.type)
     }, index, nextOrprevious)
+  },
+  _getLikeStatus(artID,category){
+    likeModel.geiClassicLikeStatus(artID, category, (res) => {
+      this.setData({
+        likeStatus: res.like_status,
+        likeCount: res.fav_nums,
+      })
+    })
   }
 })

@@ -12,5 +12,12 @@ class LikeModel extends HTTP {
       }
     })
   }
+  //单独获取点赞
+  geiClassicLikeStatus(artID, category,sCallback){
+    this.request({
+      url:`classic/${category}/${artID}/favor`,
+      success:sCallback
+    })
+  }
 }
 export { LikeModel}

@@ -1,9 +1,11 @@
 <!--pages/classic/classic.wxml-->
 <view class='container'>
-<view class='header'>
-  <J-epsoide class="epsoide" index="{{classicData.index}}" />
-  <J-like class="like" bind:like="onLike" like= "{{classicData.like_status}}" count="{{classicData.fav_nums}}" />
+  <view class='header'>
+    <J-epsoide class="epsoide" index="{{index}}" />
+    <J-like class="like" bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
   </view>
-  <J-movie content="{{classicData.content}}" image="{{classicData.image}}" />
-  <J-navi bind:left="left" bind:right="right" class="navi" title="{{classicData.title}}" first="{{first}}" latest="{{latest}}" />
+  <J-movie hidden="{{type !== 100}}" content="{{content}}" image="{{image}}" />
+  <J-music hidden="{{type !== 200}}" url="{{url}}" title="{{title}}" content="{{content}}" image="{{image}}" />
+  <J-essay hidden="{{type !== 300}}" content="{{content}}" image="{{image}}" />
+  <J-navi bind:left="left" bind:right="right" class="navi" title="{{title}}" first="{{first}}" latest="{{latest}}" />
 </view>

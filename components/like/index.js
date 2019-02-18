@@ -33,14 +33,14 @@ Component({
    */
   methods: {
     onLike(event) {
-      let like = this.properties.like;
+      const like = this.properties.like;
       let count = this.properties.count;
       this.setData({
         like: !like,
         count: like ? --count : ++count
       })
       
-      let behavior = this.properties.like?'like':'unlike';
+      const behavior = this.properties.like?'like':'unlike';
       this.triggerEvent('like',{
         behavior,
       })

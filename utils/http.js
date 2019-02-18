@@ -35,7 +35,7 @@ class HTTP {
       error_code = '1';
     }
     wx.showToast({
-      title: tips[error_code],
+      title: tips[error_code] || tips[1],
       icon:'none',
       duration:2000
     })

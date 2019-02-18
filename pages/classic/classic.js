@@ -35,7 +35,7 @@ Page({
     this._updateClassic('previous')
   },
   _updateClassic(nextOrprevious){
-    let index = this.data.index;
+    const index = this.data.index;
     classicModel.getClassic((res) => {
       this.setData({
         ...res,

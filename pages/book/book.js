@@ -1,4 +1,5 @@
-// pages/book/book.js
+import { BookModel } from './../../modules/book.js'
+const bookmodel = new BookModel();
 Page({
 
   /**
@@ -12,7 +13,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const hotList = bookmodel.getHotList();
+    hotList.then(res => {
+      console.log(res)
+      return bookmodel.getMyBookCount()
+    }).then(res=>{
+      console.log(res)
+      return bookmodel.getMyBookCount()
+    }).then(res=>{
+      console.log(res)
+    })
+    // const hotList = bookmodel.getHotList();
+    // hotList.then(res => {
+    //   console.log(res)
+    //   bookmodel.getMyBookCount()
+    //     .then(res => {
+    //       console.log(res)
+    //       bookmodel.getMyBookCount()
+    //         .then(res => {
+    //           console.log(res)
+    //           bookmodel.getMyBookCount()
+    //         })
+    //     })
+    // })
   },
 
   /**

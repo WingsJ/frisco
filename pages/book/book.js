@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    books:[]
   },
 
   /**
@@ -15,27 +15,10 @@ Page({
   onLoad: function (options) {
     const hotList = bookmodel.getHotList();
     hotList.then(res => {
-      console.log(res)
-      return bookmodel.getMyBookCount()
-    }).then(res=>{
-      console.log(res)
-      return bookmodel.getMyBookCount()
-    }).then(res=>{
-      console.log(res)
+      this.setData({
+        books : res
+      })
     })
-    // const hotList = bookmodel.getHotList();
-    // hotList.then(res => {
-    //   console.log(res)
-    //   bookmodel.getMyBookCount()
-    //     .then(res => {
-    //       console.log(res)
-    //       bookmodel.getMyBookCount()
-    //         .then(res => {
-    //           console.log(res)
-    //           bookmodel.getMyBookCount()
-    //         })
-    //     })
-    // })
   },
 
   /**

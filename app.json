@@ -1,16 +1,18 @@
 {
-  "pages":[
+  "pages": [
     "pages/classic/classic",
     "pages/book/book",
     "pages/book-detail/book-detail",
     "pages/my/my"
   ],
-  "requiredBackgroundModes": ["audio"],
-  "window":{
-    "backgroundTextStyle":"light",
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "凹凸世界",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "selectedColor": "#000000",
@@ -36,5 +38,6 @@
         "text": "喜欢"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

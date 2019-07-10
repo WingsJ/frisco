@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "J-tag":"/components/tag/index"
+    "J-share": "/components/share/index",
+    "J-like": "/components/like/index",
+    "J-tag":"/components/tag/index",
+    "J-mask": "/components/mask/index"
   }
 }

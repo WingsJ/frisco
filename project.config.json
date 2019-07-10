@@ -18,6 +18,8 @@
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -39,10 +41,10 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "书籍详情",
 					"pathName": "pages/book-detail/book-detail",
-					"query": "bid=65",
+					"query": "bid=7",
 					"scene": null
 				}
 			]

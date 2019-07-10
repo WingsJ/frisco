@@ -1,3 +1,4 @@
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
 <view class="container">
   <view class='head'>
     <image src='{{detail.image}}'></image>
@@ -7,11 +8,68 @@
   <view class='sub-container'>
     <text class='headline'>短评</text>
     <view class='comment-container'>
-      <block wx:for="{{comments}}" wx:key="content">
+      <block wx:for="{{filter.limit(comments,5)}}" wx:key="content">
         <J-tag class="j-tag" tag-radius="tag-radius" tag-class="{{index === 0 ? 'ex-tag1':''|| index === 1 ? 'ex-tag2':''}}" text="{{item.content}}">
           <text slot="after" class='num'>{{"+" + item.nums}}</text>
         </J-tag>
       </block>
     </view>
   </view>
+  <view class='sub-container'>
+    <text class='headline'>内容简介</text>
+    <text class='content' decode="{{true}}">{{filter.format(detail.summary)}}</text>
+  </view>
+  <view class='sub-container'>
+    <text class='headline'>书本信息</text>
+    <view class='detail-container'>
+      <view class='book-infor'>
+        <text class='book'>出版社</text>
+        <text class='infor-detail'>{{detail.publisher}}</text>
+      </view>
+      <view class='book-infor'>
+        <text class='book'>出版年</text>
+        <text class='infor-detail'>{{detail.pubdate}}</text>
+      </view>
+      <view class='book-infor'>
+        <text class='book'>页数</text>
+        <text class='infor-detail'>{{detail.pages}}</text>
+      </view>
+      <view class='book-infor'>
+        <text class='book'>定价</text>
+        <text class='infor-detail'>{{detail.price}}</text>
+      </view>
+      <view class='book-infor'>
+        <text class='book'>精装</text>
+        <text class='infor-detail'>{{detail.binding}}</text>
+      </view>
+      <view class='book-infor'>
+        <text class='book'>ISBN</text>
+        <text class='infor-detail'>{{detail.isbn}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='fixed-container'>
+    <div class="search" bind:tap="onFakePost">
+      <text>留下你的短评~</text>
+    </div>
+    <J-like class="like" bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
+    <J-share class="share" />
+  </view>
+</view>
+<J-mask wx:if="{{posting}}" />
+<view wx:if="{{posting}}" class="posting-container">
+  <view class="post-header">
+    <text wx:if="{{!(comments==false)}}">仅可点击标签+1</text>
+    <text wx:else>暂无短评</text>
+    <text class="cancel" bind:tap="onCancel">取消</text>
+  </view>
+  <view class="comment-container">
+    <block wx:for="{{filter.limit(comments, 3)}}" wx:key="content">
+      <J-tag  class="j-tag" bind:tapping="onPost" tag-radius="tag-radius" tag-class="{{index === 0 ? 'ex-tag1':''|| index === 1 ? 'ex-tag2':''}}" text="{{item.content}}">
+        <text class="num" slot="after">{{'+' + item.nums}}</text>
+      </J-tag>
+    </block>
+  </view>
+  <input focus="{{posting}}" confirm-type="发送" class="post" placeholder='短评最多12个字' bindconfirm="onPost"></input>
+  <!-- <image class="tip" src="/images/book/tip.png"></image> -->
 </view>

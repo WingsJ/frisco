@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    books:[]
+    books: []
   },
 
   /**
@@ -16,7 +16,7 @@ Page({
     const hotList = bookmodel.getHotList();
     hotList.then(res => {
       this.setData({
-        books : res
+        books: res
       })
     })
   },

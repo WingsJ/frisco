@@ -1,5 +1,5 @@
 <!--components/tag/index.wxml-->
-<view class='container tag-class tag-radius'>
+<view class='container tag-class tag-radius' bind:tap="onTap">
   <slot name="before"></slot>
   <text>{{text}}</text>
   <!-- slot 插槽 -->

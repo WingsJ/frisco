@@ -58,5 +58,28 @@ Page({
     this.setData({
       posting: false
     })
+  },
+  onPost(e){
+    const comment = e.detail.text;
+    if (comment.length>12){
+      wx.showToast({
+        title: '短评最多12个字',
+        icon:'none'
+      })
+      return
+    }
+    bookmodel.postComment(this.data.detail.id, comment).then(res =>{
+      wx.showToast({
+        title: '+1',
+        icon: 'none'
+      })
+      this.data.comments.unshift({
+        comment,
+        nums:1
+      })
+      this.setData({
+        comments: this.data.comments
+      })
+    })
   }
 })

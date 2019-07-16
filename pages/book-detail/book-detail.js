@@ -60,7 +60,12 @@ Page({
     })
   },
   onPost(e){
-    const comment = e.detail.text;
+    //const comment = e.detail.text;
+    //const commentInput = e.detail.value;
+    const comment = e.detail.text || e.detail.value;
+    if(!comment){
+      return;
+    }
     if (comment.length>12){
       wx.showToast({
         title: '短评最多12个字',
@@ -74,11 +79,12 @@ Page({
         icon: 'none'
       })
       this.data.comments.unshift({
-        comment,
+        content:comment,
         nums:1
       })
       this.setData({
-        comments: this.data.comments
+        comments: this.data.comments,
+        posting:false
       })
     })
   }

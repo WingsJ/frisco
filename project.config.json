@@ -38,13 +38,20 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": 0,
 					"name": "书籍详情",
 					"pathName": "pages/book-detail/book-detail",
 					"query": "bid=7",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "书籍列表",
+					"pathName": "pages/book/book",
+					"query": "",
 					"scene": null
 				}
 			]

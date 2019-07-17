@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "J-book": "/components/book/index"
+    "J-book": "/components/book/index",
+    "J-search": "/components/search/index"
   }
 }

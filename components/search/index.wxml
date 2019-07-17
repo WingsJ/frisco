@@ -15,18 +15,22 @@
         <view class="chunk"></view>
         <text>历史搜索</text>
       </view>
-      <!-- <view class="tags">
-        <tag-cmp bind:tapping="onConfirm" wx:for="{{historyKeys}}" text="{{item}}" />
-      </view> -->
+      <view class="tags">
+        <block wx:for="{{historyWords}}" wx:key="this">
+          <J-tag bind:tapping="onConfirm" text="{{item}}" />
+        </block>
+      </view>
     </view>
     <view class="history hot-search">
       <view class="title">
         <view class="chunk"></view>
         <text>热门搜索</text>
       </view>
-      <!-- <view class="tags">
-        <tag-cmp bind:tapping="onConfirm" wx:for="{{hotKeys}}" text="{{item}}" />
-      </view> -->
+      <view class="tags">
+        <block wx:for="{{hotWords}}" wx:key="this">
+          <J-tag bind:tapping="onConfirm" text="{{item}}" />
+        </block>
+      </view>
     </view>
   </view>
   <!-- <view class="books-container" wx:if="{{finished}}">

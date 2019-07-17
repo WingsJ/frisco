@@ -14,9 +14,20 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    historyWords:[],
+    hotWords:[]
   },
-
+  attached(){
+    this.setData({
+      historyWords:keyWordModel.getHistory()
+    })
+    keyWordModel.getHot().then(res => {
+      this.setData({
+        hotWords:res.hot
+      })
+    })
+    //console.log(this.data.historyWords)
+  },
   /**
    * 组件的方法列表
    */

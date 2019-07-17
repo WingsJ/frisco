@@ -1,4 +1,5 @@
-class KeyWordModel{
+import { HTTP } from '../utils/promise'
+class KeyWordModel extends HTTP{
     _key = "q"
     _maxLength = 5
     getHistory(){
@@ -9,7 +10,9 @@ class KeyWordModel{
        return  words;
     }
     getHot(){
-
+        return this.request({
+            url:`/book/hot_keyword`
+        })
     }
     addToHistory(keyword){
         let words = this.getHistory()

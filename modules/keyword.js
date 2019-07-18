@@ -14,6 +14,15 @@ class KeyWordModel extends HTTP{
             url:`/book/hot_keyword`
         })
     }
+    search(start, q) {
+        return this.request({
+          url:`book/search?summary=1`,
+          data:{
+            q,
+            start
+          }
+        })
+      }
     addToHistory(keyword){
         let words = this.getHistory()
         const has = words.includes(keyword)

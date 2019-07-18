@@ -13,7 +13,7 @@
     <view class="history">
       <view class="title">
         <view class="chunk"></view>
-        <text>历史搜索</text>
+        <text>历史搜索{{more}}</text>
       </view>
       <view class="tags">
         <block wx:for="{{historyWords}}" wx:key="this">

@@ -7,7 +7,8 @@ Page({
    */
   data: {
     books: [],
-    searching:false
+    searching:false,
+    more:1
   },
 
   /**
@@ -25,6 +26,11 @@ Page({
     const searching = !this.data.searching;
     this.setData({
       searching
+    })
+  },
+  onReachBottom(){
+    this.setData({
+      more:++this.data.more
     })
   }
 })

@@ -7,7 +7,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    more:{
+      type:Number,
+      observer: "_load_more"
+    }
   },
 
   /**
@@ -35,6 +38,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    _load_more(){
+      console.log(this.properties.more)
+    },
     onConfirm(e){
       //console.log(e)
       const word = e.detail.value || e.detail.text;

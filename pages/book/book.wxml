@@ -15,4 +15,6 @@
     </view>
   </view>
 </view>
-<J-search wx:if="{{searching}}" bind:triggerSearch="triggerSearching"></J-search>
+<view hidden="{{!searching}}">
+   <J-search more ="{{more}}" bind:triggerSearch="triggerSearching"></J-search>
+</view>

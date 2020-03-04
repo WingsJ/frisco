@@ -21,7 +21,9 @@ Component({
     hotWords:[],
     dataArr:[],
     finished:false,
-    searchValue:""
+    searchValue:"",
+    total:0,
+    loading:false
   },
   attached(){
     this.setData({
@@ -40,6 +42,20 @@ Component({
   methods: {
     _load_more(){
       console.log(this.properties.more)
+      const length = this.data.dataArr.length;
+      if (!this.data.loading && this.data.finished && (this.data.total === 0 || this.data.total > length)){
+        this.setData({
+          loading:true
+        })
+        keyWordModel.search(length, this.data.searchValue).then(res => {
+          const books = [...this.data.dataArr,...res.books];
+          this.setData({
+            dataArr: books,
+            total:res.total,
+            loading:false
+          })
+        })
+      }
     },
     onConfirm(e){
       //console.log(e)

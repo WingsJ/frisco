@@ -37,6 +37,10 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 1,
 			"list": [
@@ -51,6 +55,13 @@
 					"id": -1,
 					"name": "书籍列表",
 					"pathName": "pages/book/book",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "我的",
+					"pathName": "pages/my/my",
 					"query": "",
 					"scene": null
 				}

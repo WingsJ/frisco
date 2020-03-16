@@ -1,12 +1,12 @@
 <!--pages/my/my.wxml-->
 <view class="container">
   <image src="/images/my/my@bg.png" class="bg"></image>
-  <img-btn-cmp wx:if="{{!hasUserInfo}}" open-type="getUserInfo" class="avatar-position" bind:getuserinfo="onGetUserInfo">
+  <J-img-btn wx:if="{{!authorized}}" open-type="getUserInfo" class="avatar-position" bind:getuserinfo="onGetUserInfo">
      <image slot="img" class="avatar" src="/images/my/my.png" /> 
-  </img-btn-cmp>
-  <view class="avatar-container avatar-position">
-    <image src="{{userInfo.avatarUrl}}" wx:if="{{hasUserInfo}}" class="avatar" />
-    <open-data wx:if="{{hasUserInfo}}" type="userAvatarUrl"></open-data>
+  </J-img-btn>
+  <view wx:if="{{authorized}}" class="avatar-container avatar-position">
+    <image src="{{userInfo.avatarUrl}}" class="avatar" />
+    <text>{{userInfo.nickName}}</text>
   </view>
   <view class="about-container">
     <view bind:tap="onJumpToAbout" class="about-us">
@@ -18,15 +18,14 @@
       <text class="description">喜欢的书</text>
     </view>
   </view>
-  <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">sd</button>
-  <!-- <view class="like-container">
+  <view class="like-container">
     <image class=".headline" src="/images/my/like.png" />
     <view class="preview-container">
       <block wx:for="{{classics}}">
-        <previe-cmp bind:tap="onPreviewTap" class="preview" classic="{{item}}" />
+        <J-previe bind:tap="onPreviewTap" class="preview" classic="{{item}}" />
       </block>
     </view>
-  </view> -->
+  </view>
 </view>
 
 <image bind:tap="onStudy" class="study" src="/images/my/study.png"></image>

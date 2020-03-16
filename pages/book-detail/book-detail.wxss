@@ -340,3 +340,12 @@
     margin-bottom: 30rpx;
   }
   
+  .share-btn{
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: -30rpx;
+  }
+  .share-btn image {
+    width: 40rpx;
+    height: 40rpx;
+  }

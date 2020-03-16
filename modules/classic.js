@@ -39,6 +39,14 @@ class ClassicModel extends HTTP {
     return index !== 1 ? true : false
   }
 
+  getMyFavor(success) {
+    const params = {
+      url:"classic/favor",
+      success:success
+    }
+    this.request(params)
+  }
+
   _getKey(index) {
     let key = `classic-${index}`;
     return key

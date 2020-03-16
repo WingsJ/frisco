@@ -2,7 +2,12 @@
 <view class='container'>
   <view class='header'>
     <J-epsoide class="epsoide" index="{{index}}" />
-    <J-like class="like" bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
+    <view class="like-container">
+      <J-like class="like" bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
+      <J-img-btn class="share-btn" open-type="share">
+        <image class="share" slot="img" src="/images/icon/share.png"></image>
+      </J-img-btn>
+    </view>
   </view>
   <J-movie hidden="{{type !== 100}}" content="{{content}}" image="{{image}}" />
   <J-music wx:if="{{type === 200}}" url="{{url}}" title="{{title}}" content="{{content}}" image="{{image}}" />

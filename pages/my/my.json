@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "J-img-btn":"/components/image-button/index",
+    "J-previe":"/components/preview/index"
+  }
 }

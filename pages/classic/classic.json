@@ -5,6 +5,7 @@
     "J-essay": "/components/classic/essay/index",
     "J-music": "/components/classic/music/index",
     "J-epsoide": "/components/epsoide/index",
-    "J-navi": "/components/navi/index"
+    "J-navi": "/components/navi/index",
+    "J-img-btn": "/components/image-button/index"
   }
 }

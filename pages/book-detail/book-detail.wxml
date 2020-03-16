@@ -53,7 +53,9 @@
       <text>留下你的短评~</text>
     </div>
     <J-like class="like" bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
-    <J-share class="share" />
+    <J-img-btn class="share-btn" open-type="share">
+        <image class="share" slot="img" src="/images/icon/share.png"></image>
+      </J-img-btn>
   </view>
 </view>
 <J-mask wx:if="{{posting}}" />

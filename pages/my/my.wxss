@@ -80,7 +80,10 @@
 .about-container > view:nth-child(2){
   margin-top: -5rpx;
 }
-
+.avatar-position > text {
+  font-size: 24rpx;
+  color:#999999;
+}
 .like-container{
   /* margin-top:30rpx; */
   width:100%;

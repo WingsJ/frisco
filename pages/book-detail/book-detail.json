@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "J-share": "/components/share/index",
+    "J-img-btn": "/components/image-button/index",
     "J-like": "/components/like/index",
     "J-tag":"/components/tag/index",
     "J-mask": "/components/mask/index"
